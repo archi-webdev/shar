@@ -1,0 +1,146 @@
+.card-tour
+    height: 50rem
+    transition: 1s all
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    @include respond(tab-port)
+        height: auto
+    &__side
+        height: 50rem
+        transition: .7s all ease-out
+        color: white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.69)
+        -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.69)
+        -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.69)
+        @include respond(tab-port)
+            height: auto
+            position: relative
+            box-shadow: 0.2px 0.5px 1px 0px rgba(0,0,0,0.69)
+        
+        &_front
+            @include respond(tab-port)
+                padding-bottom: 13rem
+
+                
+
+        &_back
+            background: green
+            transform: rotateY(180deg)
+            background: linear-gradient(120deg, $color-brown-light, $color-brown-darck)
+            @include respond(tab-port)
+                transform: rotateY(0deg)
+                padding: 5rem
+                padding-top: 12rem
+                margin-top: -11rem
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+                width: 84%
+            @include respond(phone)
+                width: auto
+                
+            
+
+    &:hover &__side_front
+        transform: rotateY(-180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
+    &:hover &__side_back
+        transform: rotateY(0deg)
+    
+    &__img
+        background-blend-mode: hard-light
+        height: 21rem
+        background: $color-brown-light url(../img/card-1.png) center / cover no-repeat
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 76%)
+        &_1
+            background: $color-brown-light url(../img/card-1.png) center / cover no-repeat
+        &_2
+            background: $color-brown-light url(../img/card-2.png) center / cover no-repeat
+        &_3
+            background: $color-brown-light url(../img/card-3.png) center / cover no-repeat
+        @include respond(tab-port)
+            height: 30rem
+
+
+    &__title
+        font-size: 2.8rem
+        letter-spacing: .2rem
+        font-weight: 300
+        text-transform: uppercase
+        text-align: right
+        position: absolute
+        top:  17rem
+        right: 0rem
+        @include respond(tab-port)
+            top: 25rem
+            font-size: 3.8rem
+    &__span
+        background: linear-gradient(90deg, $color-brown-light, $color-brown-darck)
+        padding: 1rem 2rem .3rem 2rem
+        &_1
+        &_2
+            position: absolute
+            top: 3.4rem
+            right: 0
+            padding-bottom: 1rem
+            padding-top: 0rem
+            @include respond(tab-port)
+                top: 4.4rem
+    &__descr
+        ul
+            list-style: none
+            margin: 5rem -2rem
+            width: 75%
+            
+
+
+            li
+                font-size: $font-size-paragraph
+                letter-spacing: .1rem
+                color: $color-gray
+                border-bottom: 1px solid $color-gray
+                width: 70%
+                text-align: center
+                &:not(:last-child)
+                    margin-bottom: 2rem
+                    @include respond(tab-land)
+                        margin: 1rem -1.5rem
+                        letter-spacing: 0
+                        font-size: 1.5rem
+                    @include respond(tab-port)
+                        font-size: 1.5rem
+        
+    &__backSide-box
+        position: absolute 
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        @include respond(tab-port)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%, 0%)
+            text-align: center
+            
+            
+
+    &__text
+        margin-bottom: 8rem
+        letter-spacing: .2rem
+        text-transform: uppercase
+        text-align: center
+        &_1
+            font-size: $font-size-paragraph
+            font-weight: 300
+            text-align: center
+        &_2
+            font-size: 5rem
+            font-weight: 500
+            text-align: center
+
+
